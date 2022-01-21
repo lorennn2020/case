@@ -400,6 +400,13 @@ body.open_game02 .game02{
     transform: translateX(-50%);
     bottom: 10%;
 }
+#beta{
+
+    bottom: 9%;
+}
+#gamma{
+    bottom: 8%;
+}
 /* game02 end */
 /* game03 */
 .game03{
