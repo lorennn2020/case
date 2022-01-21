@@ -96,11 +96,13 @@ jQuery(document).ready(function () {
     // }
 
     if (window.DeviceMotionEvent) {
-        console.log('DeviceMotionEvent support');
+        // console.log('DeviceMotionEvent support');
+        alert('DeviceMotionEvent support');
     
         window.addEventListener('devicemotion', deviceMotionHandler, false);
     } else {
-        console.log('DeviceMotionEvent not support');
+        // console.log('DeviceMotionEvent not support');
+        alert('DeviceMotionEvent not support');
     }
 
     //獲取加速度資訊
@@ -110,11 +112,11 @@ jQuery(document).ready(function () {
     var last_update = 0;
     var x, y, z, last_x = 0, last_y = 0, last_z = 0;
     function deviceMotionHandler(e) {
-        console.log("震動！");
         
             var acceleration = e.accelerationIncludingGravity;
             var curTime = new Date().getTime();
             if ((curTime-last_update)> 10) {
+                alert(":D");
                 var diffTime = curTime -last_update;
                 last_update = curTime;
                 x = acceleration.x;
