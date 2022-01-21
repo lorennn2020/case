@@ -95,14 +95,22 @@ jQuery(document).ready(function () {
     //     navigator.vibrate([500, 300, 400,300]);
     // }
 
-    if (window.DeviceOrientationEvent) {
-        alert(":D");
-
-        window.addEventListener('deviceorientation', deviceOrientationHandler, false);
-        // document.getElementById("doeSupported").innerText = "";
-        alert("支援裝置震動！");
-    }else{
-        alert("裝置不支持震動");
+    if (window.DeviceMotionEvent) {
+        // Add listener
+    
+        window.addEventListener('devicemotion', deviceMotionHandler, false);
+    } else {
+        console.log('DeviceMotionEvent not support');
     }
+
+    // if (window.DeviceOrientationEvent) {
+    //     alert(":D");
+
+    //     window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+    //     // document.getElementById("doeSupported").innerText = "";
+    //     alert("支援裝置震動！");
+    // }else{
+    //     alert("裝置不支持震動");
+    // }
     
 });
