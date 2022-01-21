@@ -103,8 +103,30 @@ jQuery(document).ready(function () {
         console.log('DeviceMotionEvent not support');
     }
 
+    //獲取加速度資訊
+    //通過監聽上一步獲取到的x, y, z 值在一定時間範圍內的變化率，進行裝置是否有進行晃動的判斷。
+    //而為了防止正常移動的誤判，需要給該變化率設定一個合適的臨界值。
+    var SHAKE_THRESHOLD = 4000;
+    var last_update = 0;
+    var x, y, z, last_x = 0, last_y = 0, last_z = 0;
     function deviceMotionHandler() {
-        alert("震動！"); 
+        console("震動！");
+            var acceleration =eventData.accelerationIncludingGravity;
+            var curTime = new Date().getTime();
+            if ((curTime-last_update)> 10) {
+                var diffTime = curTime -last_update;
+                last_update = curTime;
+                x = acceleration.x;
+                y = acceleration.y;
+                z = acceleration.z;
+                var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
+                if (speed > SHAKE_THRESHOLD) {
+                    alert("支援裝置震動！");
+                }
+                last_x = x;
+                last_y = y;
+                last_z = z;
+            }
     }
     
 
