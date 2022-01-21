@@ -49,52 +49,6 @@ jQuery(document).ready(function () {
 
 
 
-    // //運動事件監聽
-    // if (window.DeviceMotionEvent) {
-    //     alert('DeviceMotionEvent');
-    //     window.addEventListener('devicemotion',deviceMotionHandler,false);
-    // }
-
-    // //獲取加速度資訊
-    // //通過監聽上一步獲取到的x, y, z 值在一定時間範圍內的變化率，進行裝置是否有進行晃動的判斷。
-    // //而為了防止正常移動的誤判，需要給該變化率設定一個合適的臨界值。
-    // var SHAKE_THRESHOLD = 4000;
-    // var last_update = 0;
-    // var x, y, z, last_x = 0, last_y = 0, last_z = 0;
-    // function deviceMotionHandler(eventData) {
-    //     alert('deviceMotionHandler');
-    //         var acceleration =eventData.accelerationIncludingGravity;
-    //         var curTime = new Date().getTime();
-    //         if ((curTime-last_update)> 10) {
-    //             var diffTime = curTime -last_update;
-    //             last_update = curTime;
-    //             x = acceleration.x;
-    //             y = acceleration.y;
-    //             z = acceleration.z;
-    //             var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
-    //             if (speed > SHAKE_THRESHOLD) {
-    //                 vibration();  // Do something
-    //             }
-    //             last_x = x;
-    //             last_y = y;
-    //             last_z = z;
-    //         }
-    // }
-    // function vibration(){
-    //     navigator.vibrate = navigator.vibrate
-    //             || navigator.webkitVibrate
-    //             || navigator.mozVibrate
-    //             || navigator.msVibrate;
-
-    //     if (navigator.vibrate) {
-    //         // 支援
-    //         // console.log("支援裝置震動！");
-    //         alert("支援裝置震動！");
-    //     }
-    //     //中括號裡面的值標示[震動時間，停止時間，震動時間，停止時間………..]。沒有錯就是這種規律，簡單明瞭
-    //     navigator.vibrate([500, 300, 400,300]);
-    // }
-
     if (window.DeviceMotionEvent) {
         // console.log('DeviceMotionEvent support');
         alert('DeviceMotionEvent support');
@@ -136,5 +90,26 @@ jQuery(document).ready(function () {
                 last_z = z;
             }
     }
+
+
+
+    // 測試用
+    if(window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function(event) {
+        var a = document.getElementById('alpha'),
+            b = document.getElementById('beta'),
+            g = document.getElementById('gamma'),
+            alpha = event.alpha,
+            beta = event.beta,
+            gamma = event.gamma;
+      
+        a.innerHTML = Math.round(alpha);
+        b.innerHTML = Math.round(beta);
+        g.innerHTML = Math.round(gamma);
+      
+          }, false);
+      }else{
+          document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+      }
     
 });
