@@ -111,6 +111,7 @@ jQuery(document).ready(function () {
     var x, y, z, last_x = 0, last_y = 0, last_z = 0;
     function deviceMotionHandler() {
         console.log("震動！");
+        
             var acceleration =eventData.accelerationIncludingGravity;
             var curTime = new Date().getTime();
             if ((curTime-last_update)> 10) {
@@ -128,16 +129,5 @@ jQuery(document).ready(function () {
                 last_z = z;
             }
     }
-    
-
-    // if (window.DeviceOrientationEvent) {
-    //     alert(":D");
-
-    //     window.addEventListener('deviceorientation', deviceOrientationHandler, false);
-    //     // document.getElementById("doeSupported").innerText = "";
-    //     alert("支援裝置震動！");
-    // }else{
-    //     alert("裝置不支持震動");
-    // }
     
 });
