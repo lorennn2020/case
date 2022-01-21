@@ -110,7 +110,7 @@ jQuery(document).ready(function () {
     var last_update = 0;
     var x, y, z, last_x = 0, last_y = 0, last_z = 0;
     function deviceMotionHandler() {
-        console("震動！");
+        console.log("震動！");
             var acceleration =eventData.accelerationIncludingGravity;
             var curTime = new Date().getTime();
             if ((curTime-last_update)> 10) {
