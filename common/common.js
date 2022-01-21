@@ -51,6 +51,7 @@ jQuery(document).ready(function () {
 
     //運動事件監聽
     if (window.DeviceMotionEvent) {
+        alert('DeviceMotionEvent');
         window.addEventListener('devicemotion',deviceMotionHandler,false);
     }
 
@@ -61,6 +62,7 @@ jQuery(document).ready(function () {
     var last_update = 0;
     var x, y, z, last_x = 0, last_y = 0, last_z = 0;
     function deviceMotionHandler(eventData) {
+        alert('deviceMotionHandler');
             var acceleration =eventData.accelerationIncludingGravity;
             var curTime = new Date().getTime();
             if ((curTime-last_update)> 10) {
