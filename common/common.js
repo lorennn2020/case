@@ -101,5 +101,8 @@ jQuery(document).ready(function () {
         window.addEventListener('deviceorientation', deviceOrientationHandler, false);
         // document.getElementById("doeSupported").innerText = "";
         alert("支援裝置震動！");
+    }else{
+        alert("裝置不支持震動");
     }
+    
 });
