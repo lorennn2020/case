@@ -49,15 +49,15 @@ jQuery(document).ready(function () {
 
 
 
-    if (window.DeviceMotionEvent) {
-        // console.log('DeviceMotionEvent support');
-        alert('DeviceMotionEvent support');
+    // if (window.DeviceMotionEvent) {
+    //     // console.log('DeviceMotionEvent support');
+    //     alert('DeviceMotionEvent support');
     
-        window.addEventListener('devicemotion', deviceMotionHandler, false);
-    } else {
-        // console.log('DeviceMotionEvent not support');
-        alert('DeviceMotionEvent not support');
-    }
+    //     window.addEventListener('devicemotion', deviceMotionHandler, false);
+    // } else {
+    //     // console.log('DeviceMotionEvent not support');
+    //     alert('DeviceMotionEvent not support');
+    // }
 
     // //獲取加速度資訊
     // //通過監聽上一步獲取到的x, y, z 值在一定時間範圍內的變化率，進行裝置是否有進行晃動的判斷。
