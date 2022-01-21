@@ -109,10 +109,10 @@ jQuery(document).ready(function () {
     var SHAKE_THRESHOLD = 4000;
     var last_update = 0;
     var x, y, z, last_x = 0, last_y = 0, last_z = 0;
-    function deviceMotionHandler() {
+    function deviceMotionHandler(e) {
         console.log("震動！");
         
-            var acceleration =eventData.accelerationIncludingGravity;
+            var acceleration = e.accelerationIncludingGravity;
             var curTime = new Date().getTime();
             if ((curTime-last_update)> 10) {
                 var diffTime = curTime -last_update;
