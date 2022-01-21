@@ -115,6 +115,8 @@ jQuery(document).ready(function () {
         
             var acceleration = e.accelerationIncludingGravity;
             var curTime = new Date().getTime();
+            alert("curTime00,",curTime);
+
             if ((curTime - last_update) > 10) {
                 alert("curTime,",curTime);
                 alert("last_update,",last_update);
