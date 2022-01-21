@@ -96,12 +96,17 @@ jQuery(document).ready(function () {
     // }
 
     if (window.DeviceMotionEvent) {
-        // Add listener
+        console.log('DeviceMotionEvent support');
     
         window.addEventListener('devicemotion', deviceMotionHandler, false);
     } else {
         console.log('DeviceMotionEvent not support');
     }
+
+    function deviceMotionHandler() {
+        alert("震動！"); 
+    }
+    
 
     // if (window.DeviceOrientationEvent) {
     //     alert(":D");
