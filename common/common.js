@@ -96,6 +96,8 @@ jQuery(document).ready(function () {
     // }
 
     if (window.DeviceOrientationEvent) {
+        alert(":D");
+
         window.addEventListener('deviceorientation', deviceOrientationHandler, false);
         // document.getElementById("doeSupported").innerText = "";
         alert("支援裝置震動！");
