@@ -86,7 +86,8 @@ jQuery(document).ready(function () {
 
         if (navigator.vibrate) {
             // 支援
-            console.log("支援裝置震動！");
+            // console.log("支援裝置震動！");
+            alert("支援裝置震動！");
         }
         //中括號裡面的值標示[震動時間，停止時間，震動時間，停止時間………..]。沒有錯就是這種規律，簡單明瞭
         navigator.vibrate([500, 300, 400,300]);
