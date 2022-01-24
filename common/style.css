@@ -392,7 +392,7 @@ body.open_game02 .game02{
     font-size: 20px;
     position: absolute;
     display: block;
-    left: 50%;
+    left: 42%;
     -webkit-transform: translateX(50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -401,10 +401,11 @@ body.open_game02 .game02{
     bottom: 10%;
 }
 #beta{
-
+    left: 50%;
     bottom: 9%;
 }
 #gamma{
+    left: 58%;
     bottom: 8%;
 }
 /* game02 end */
