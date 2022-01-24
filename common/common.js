@@ -110,7 +110,7 @@ jQuery(document).ready(function () {
 
             // 獲取時間
             var curTime = new Date().getTime();
-            alert("curTime00,",curTime);
+            console.log("curTime00,",curTime);
       
         }, false);
       }else{
